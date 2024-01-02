@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #919191;
+      }
+
+      .counter-main {
+        width: 30%;
+        height: 300px;
+        text-align: center;
+        padding: 50px 0px;
+        background-color: #a3a3a3;
+        box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.37),
+          -3px -4px 12px rgba(0, 0, 0, 0.363);
+        border: 2px solid rgb(211, 211, 211);
+        border-radius: 5px;
+      }
+
+      h2 {
+        font-size: 50px;
+        /* font-weight: 700; */
+        margin: 20px 0px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background-color: #010101;
+        color: #fff;
+        border: none;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0px 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="counter-main">
+      <h1>Counter</h1>
+      <h2 id="count">0</h2>
+      <button type="button" class="btn" onclick="minusCount();">Lower Count</button>
+      <button type="button" class="btn" onclick="resetCount();">Reset Count</button>
+      <button type="button" class="btn" onclick="addCount();">Add Count</button>
+    </div>
+
+    <script>
+      let counter = 0;
+
+      function addCount() {
+        counter++;
+        document.querySelector("#count").innerHTML = counter;
+      }
+
+      function minusCount() {
+        counter--;
+        document.querySelector("#count").innerHTML = counter;
+      }
+
+      function resetCount(){
+       counter = 0;
+        document.querySelector("#count").innerHTML = counter;
+      }
+
+    </script>
+  </body>
+</html>

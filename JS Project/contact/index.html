@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="contact-section">
+    <h1>Contact Us</h1>
+    <div class="boder"></div>
+    <form class="contact-form" action="javascript:alert('ready to submit.')" onsubmit="return validation(this)"> 
+        <input type="text" name="name" class="contact-form-text" placeholder="Your Name">
+        <input type="email" name="email" class="contact-form-text" placeholder="Your Email">
+        <input type="password" name="password" class="contact-form-text" placeholder="Your Password">
+        <textarea class="contact-form-text" name="message" placeholder="Your Message"></textarea>
+        <input type="submit"class="contact-form-btn" value="send">
+    </form>
+   </div>
+
+    <script>
+        function validation(myform){
+            let name = myform.name.value;
+            let email = myform.email.value;
+            let password = myform.password.value;
+            let message = myform.message.value;
+
+            let errors = "error found:\n";
+            let hasError = 0;
+
+            let namePat = /[0-9]/;
+            if(name === ""){
+                hasError++;
+                errors += hasError + ". your name is empty.\n";
+                
+            }
+            else if (namePat.test(name)) {
+          hasError++;
+          errors += hasError + ". Numbers are not allowed in name.\n";
+        }
+
+
+
+        let emailPat = /^[a-zA-Z0-9-\.]{3,}@[a-z0-9]{3,}\.[a-z\.]{3,}$/;
+
+            if(email === ""){
+                hasError++;
+                errors += hasError + ".your email is empty .\n";
+            }
+            else if (namePat.test(name)) {
+          hasError++;
+          errors += hasError + ". Numbers are not allowed in name.\n";
+        }
+
+            if (password === ""){
+                hasError++;
+                errors += hasError + ".your password is empty .\n";
+            }
+
+            if (message === ""){
+                hasError++;
+                errors += hasError + ".your message is empty .\n";
+            }
+
+
+            if(hasError > 0){
+                alert(errors);
+                return false;
+            }
+
+
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
